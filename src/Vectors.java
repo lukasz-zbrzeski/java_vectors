@@ -1,3 +1,7 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -31,5 +35,13 @@ public class Vectors {
         return addedVectors;
     }
 
+    public void saveVector(ArrayList<Double> vector) throws IOException {
+        BufferedWriter bw = new BufferedWriter(new FileWriter("result_of_adding_vectors.txt"));
 
+        for (Double number : vector) {
+            bw.write(number + " ");
+        }
+
+        bw.close();
+    }
 }
